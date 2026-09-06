@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aya Atef - Graphic Designer. Social Media, Branding, Print, Corporate and Presentation Design." />
+  <meta name="theme-color" content="#242321" />
+  <title>Aya Atef | Graphic Designer</title>
+
+  <style>
+    :root {
+      --ink: #242321;
+      --ink-2: #2d2b28;
+      --coral: #e46d5b;
+      --cream: #f4f0e7;
+      --paper: #fffdf9;
+      --white: #ffffff;
+      --muted: #747069;
+      --line: rgba(36, 35, 33, 0.16);
+      --radius: 24px;
+      --shadow: 0 24px 70px rgba(36, 35, 33, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .section-title {
+      margin-top: 12px;
+      font-size: clamp(2.25rem, 5vw, 4.6rem);
+      line-height: .95;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+    .section-copy { color: var(--muted); max-width: 720px; margin-top: 18px; font-size: 1.05rem; }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(36, 35, 33, .94);
+      color: var(--white);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: .12em;
+      font-size: 1.02rem;
+    }
+    .brand span { color: var(--coral); }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+      transition: .25s ease;
+    }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta {
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      padding: 9px 15px;
+    }
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding-top: 72px;
+      background: linear-gradient(90deg, var(--ink) 0 57%, var(--coral) 57% 100%);
+      color: var(--white);
+      display: grid;
+      align-items: stretch;
+    }
+    .hero-grid {
+      width: min(1260px, 100%);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 57% 43%;
+      min-height: calc(100vh - 72px);
+    }
+    .hero-copy {
+      padding: clamp(60px, 8vw, 110px) clamp(24px, 6vw, 86px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      font-size: .82rem;
+      color: rgba(255,255,255,.68);
+      font-weight: 700;
+    }
+    .hero h1 {
+      margin: 24px 0 18px;
+      font-size: clamp(4rem, 9.7vw, 8.9rem);
+      line-height: .78;
+      letter-spacing: -.06em;
+      font-weight: 900;
+    }
+    .hero h1 span { display: block; }
+    .role {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      font-weight: 800;
+      margin-top: 18px;
+    }
+    .hero-specialties {
+      margin-top: 22px;
+      color: rgba(255,255,255,.68);
+      font-size: 1.05rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .25s ease, background .25s ease, color .25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--coral); color: var(--white); }
+    .btn-light { background: var(--white); color: var(--ink); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.35); color: var(--white); }
+
+    .hero-visual {
+      position: relative;
+      background: var(--coral);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      min-height: 540px;
+    }
+    .hero-visual::before {
+      content: "AYA";
+      position: absolute;
+      top: 52px;
+      right: -15px;
+      font-size: clamp(6rem, 15vw, 13rem);
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(255,255,255,.08);
+      letter-spacing: -.08em;
+    }
+    .portrait-wrap {
+      flex: 1;
+      min-height: 440px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .portrait-wrap img {
+      width: min(78%, 500px);
+      max-height: 75vh;
+      object-fit: contain;
+      object-position: bottom;
+      filter: drop-shadow(0 28px 32px rgba(40, 20, 16, .24));
+    }
+    .hero-quote {
+      position: relative;
+      z-index: 3;
+      margin: 0 clamp(24px, 5vw, 60px) 48px;
+      font-size: clamp(1.35rem, 2.4vw, 2.05rem);
+      line-height: 1.2;
+      font-weight: 800;
+      max-width: 460px;
+    }
+    .hero-meta { margin-top: 14px; font-size: .86rem; opacity: .85; font-weight: 500; }
+
+    /* ABOUT */
+    section { padding: 105px 0; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: start; }
+    .about-text p { font-size: clamp(1.2rem, 2.2vw, 1.65rem); line-height: 1.45; margin-top: 28px; max-width: 720px; }
+    .glance {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .glance-row {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .glance-row:last-child { border-bottom: 0; }
+    .glance-label { color: var(--coral); font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; }
+    .glance-value { font-weight: 800; }
+
+    /* EXPERTISE */
+    .expertise { background: var(--paper); }
+    .cards { margin-top: 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .card {
+      min-height: 310px;
+      padding: 26px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:first-child { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card-number { color: var(--coral); font-weight: 900; letter-spacing: .08em; }
+    .card h3 { margin-top: 52px; font-size: 1.6rem; line-height: 1.05; }
+    .card p { margin-top: auto; color: var(--muted); }
+    .card:first-child p { color: rgba(255,255,255,.68); }
+
+    /* EXPERIENCE */
+    .experience { background: var(--ink); color: var(--white); }
+    .experience .section-copy { color: rgba(255,255,255,.6); }
+    .timeline { margin-top: 50px; border-top: 1px solid rgba(255,255,255,.15); }
+    .job {
+      display: grid;
+      grid-template-columns: 150px 1fr 1.55fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      align-items: start;
+    }
+    .job-country { color: var(--coral); letter-spacing: .16em; text-transform: uppercase; font-size: .8rem; font-weight: 900; }
+    .job h3 { font-size: 1.25rem; line-height: 1.1; }
+    .job-role { color: rgba(255,255,255,.56); margin-top: 5px; }
+    .job p { color: rgba(255,255,255,.72); }
+
+    /* WORK */
+    .work { background: var(--cream); }
+    .project {
+      margin-top: 60px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+    .project-head {
+      display: grid;
+      grid-template-columns: 110px 1.1fr 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+    .project-no { color: var(--coral); font-weight: 900; font-size: 1.2rem; letter-spacing: .12em; }
+    .project h3 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -.04em; }
+    .project-desc { color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; font-size: .78rem; font-weight: 800; background: rgba(255,255,255,.45); }
+    .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .shot {
+      border: 0;
+      padding: 0;
+      cursor: zoom-in;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: 0 14px 40px rgba(36,35,33,.08);
+      min-height: 260px;
+    }
+    .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .shot:hover img { transform: scale(1.025); }
+    .shot.logo img { object-fit: contain; padding: 28px; }
+    .shot:nth-child(1) { grid-column: span 7; }
+    .shot:nth-child(2) { grid-column: span 5; }
+    .shot:nth-child(3) { grid-column: span 4; }
+    .shot:nth-child(4) { grid-column: span 8; }
+
+    /* PROCESS */
+    .process { background: var(--paper); }
+    .process-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .tool-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .tool { padding: 10px 14px; background: var(--cream); border: 1px solid var(--line); border-radius: 999px; font-weight: 800; }
+    .steps { border-top: 1px solid var(--line); }
+    .step { display: grid; grid-template-columns: 65px 1fr; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .step-no { color: var(--coral); font-weight: 900; font-size: 1.2rem; }
+    .step h3 { font-size: 1.3rem; }
+    .step p { color: var(--muted); margin-top: 3px; }
+    .strengths { margin-top: 34px; color: var(--muted); }
+
+    /* CONTACT */
+    .contact { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+    .contact::after {
+      content: "LET'S WORK";
+      position: absolute;
+      right: -35px;
+      bottom: -30px;
+      font-size: clamp(5rem, 14vw, 13rem);
+      font-weight: 900;
+      letter-spacing: -.07em;
+      color: rgba(255,255,255,.035);
+      white-space: nowrap;
+    }
+    .contact-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .contact h2 { font-size: clamp(3.5rem, 7vw, 7rem); line-height: .84; letter-spacing: -.06em; }
+    .contact-sub { margin-top: 30px; color: rgba(255,255,255,.62); font-size: 1.15rem; }
+    .contact-card { background: var(--ink-2); border: 1px solid rgba(255,255,255,.1); border-radius: 22px; padding: 24px 30px; }
+    .contact-line { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .contact-line:last-child { border-bottom: 0; }
+    .contact-line small { display: block; color: rgba(255,255,255,.45); letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-line a { text-decoration: none; font-weight: 800; }
+    .contact-line a:hover { color: var(--coral); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+    footer { background: #1b1a18; color: rgba(255,255,255,.5); padding: 22px 0; font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(1100px, 94vw); max-height: 88vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.06);
+      color: white;
+      cursor: pointer;
+      font-size: 1.55rem;
+    }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .hero { background: var(--ink); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 650px; }
+      .about-grid, .process-layout, .contact-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .job { grid-template-columns: 110px 1fr; }
+      .job p { grid-column: 2; }
+      .project-head { grid-template-columns: 80px 1fr; }
+      .project-desc { grid-column: 2; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, 1180px); }
+      section { padding: 78px 0; }
+      .menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 14px;
+        right: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        background: var(--ink-2);
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.28);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px 10px; }
+      .hero-grid { min-height: auto; }
+      .hero-copy { min-height: calc(100vh - 72px); padding: 72px 28px; }
+      .hero h1 { font-size: clamp(4.2rem, 23vw, 7rem); }
+      .hero-visual { min-height: 620px; }
+      .portrait-wrap img { width: min(90%, 480px); }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 250px; }
+      .job { grid-template-columns: 1fr; gap: 8px; }
+      .job p { grid-column: auto; margin-top: 6px; }
+      .project-head { grid-template-columns: 1fr; gap: 12px; }
+      .project-desc { grid-column: auto; }
+      .gallery { grid-template-columns: 1fr; }
+      .shot, .shot:nth-child(n) { grid-column: 1; min-height: 250px; }
+      .contact-grid { gap: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">AYA <span>ATEF</span></a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker">Portfolio 2026</div>
+        <h1><span>AYA</span><span>ATEF</span></h1>
+        <div class="role">Graphic Designer</div>
+        <div class="hero-specialties">Social Media / Branding / Print / Visual Content</div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View selected work</a>
+          <a class="btn btn-outline" href="Aya_Atef_Portfolio.pdf" download>Download PDF portfolio</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="portrait-wrap">
+          <img src="assets/aya-atef.png" alt="Aya Atef" />
+        </div>
+        <div class="hero-quote">
+          Creative visuals built with clarity, consistency, and purpose.
+          <div class="hero-meta">Mansoura, Egypt · Available for remote opportunities</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container about-grid reveal">
+        <div class="about-text">
+          <div class="eyebrow">02 / Profile</div>
+          <h2 class="section-title">A little about me</h2>
+          <p>
+            Graphic designer with cross-market experience across Egypt, Saudi Arabia, and Norway.
+            I create visual content that makes marketing ideas clearer, more engaging, and consistent with the brand.
+            My experience covers social media design, branding, corporate and print materials, presentation design,
+            and day-to-day content support.
+          </p>
+        </div>
+
+        <div class="glance" aria-label="At a glance">
+          <div class="glance-row"><div class="glance-label">Markets</div><div class="glance-value">Egypt / Saudi Arabia / Norway</div></div>
+          <div class="glance-row"><div class="glance-label">Design areas</div><div class="glance-value">Social / Brand / Print / Corporate</div></div>
+          <div class="glance-row"><div class="glance-label">Graduation</div><div class="glance-value">Bachelor's Degree · 2026</div></div>
+          <div class="glance-row"><div class="glance-label">Languages</div><div class="glance-value">Arabic - Native · English - Good · Norwegian - Basic</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+      <div class="container reveal">
+        <div class="eyebrow">03 / Expertise</div>
+        <h2 class="section-title">What I design</h2>
+        <p class="section-copy">A versatile mix of digital and print work for brands, campaigns, and everyday communication.</p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Social Media</h3>
+            <p>Posts, campaign visuals, digital graphics, and content-ready layouts.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Branding</h3>
+            <p>Visual identity support, logo direction, color systems, and a consistent brand look.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Print & Corporate</h3>
+            <p>Brochures, posters, stickers, official letters, and branded templates.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">04</div>
+            <h3>Presentations</h3>
+            <p>Branded PowerPoint templates and clear visual storytelling.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="container reveal">
+        <div class="eyebrow">04 / Experience</div>
+        <h2 class="section-title">Where I've worked</h2>
+        <p class="section-copy">Experience across design, social media, account management, and community support.</p>
+
+        <div class="timeline">
+          <article class="job">
+            <div class="job-country">Norway</div>
+            <div><h3>Astamr</h3><div class="job-role">Social Media Account Manager</div></div>
+            <p>Managed content calendars, publishing workflows, community activity, and supported content planning.</p>
+          </article>
+          <article class="job">
+            <div class="job-country">Saudi Arabia</div>
+            <div><h3>AlOstaz Motawer</h3><div class="job-role">Graphic Designer</div></div>
+            <p>Created social media and marketing visuals aligned with campaign objectives and brand standards.</p>
+          </article>
+          <article class="job">
+            <div class="job-country">Saudi Arabia</div>
+            <div><h3>Sultan-Averroes</h3><div class="job-role">Graphic Designer</div></div>
+            <p>Designed corporate, print, social, poster, video, and presentation materials while maintaining brand consistency.</p>
+          </article>
+          <article class="job">
+            <div class="job-country">Egypt</div>
+            <div><h3>Echo</h3><div class="job-role">Social Media Moderator</div></div>
+            <p>Handled customer inquiries and community activity with timely, professional communication.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow">05 / Portfolio</div>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-copy">Brand identity, social media, corporate and print design selected from my 2026 portfolio.</p>
+        </div>
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div class="project-no">01</div>
+            <div><h3>Sultan Averroes Corporate & Print Design</h3></div>
+            <div class="project-desc">
+              I designed a range of corporate and print materials for Sultan Averroes, including a company brochure,
+              branded letterhead, and stickers. My role was to keep the visual style consistent across different formats
+              while creating clean, professional layouts that reflect the company's identity.
+              <div class="tags"><span class="tag">Social Media</span><span class="tag">Photoshop</span><span class="tag">Canva</span></div>
+            </div>
+          </div>
+          <div class="gallery">
+            <button class="shot" data-src="assets/sultan-social.jpg" aria-label="Open Sultan Averroes social media design"><img src="assets/sultan-social.jpg" alt="Sultan Averroes social media design" /></button>
+            <button class="shot" data-src="assets/sultan-brochure-project.jpg" aria-label="Open Sultan Averroes brochure"><img src="assets/sultan-brochure-project.jpg" alt="Sultan Averroes brochure" /></button>
+            <button class="shot logo" data-src="assets/sultan-sticker.png" aria-label="Open Sultan Averroes sticker"><img src="assets/sultan-sticker.png" alt="Sultan Averroes branded sticker" /></button>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div class="project-no">02</div>
+            <div><h3>AlOstaz Motawer Brand Identity</h3></div>
+            <div class="project-desc">
+              A complete visual identity including the logo, color palette, typography, and brand applications.
+              The direction combines a friendly character with construction-inspired elements to create a consistent,
+              recognizable brand.
+              <div class="tags"><span class="tag">Logo</span><span class="tag">Color</span><span class="tag">Type</span><span class="tag">Applications</span></div>
+            </div>
+          </div>
+          <div class="gallery">
+            <button class="shot" data-src="assets/alostaz-logo.jpg" aria-label="Open AlOstaz Motawer logo"><img src="assets/alostaz-logo.jpg" alt="AlOstaz Motawer logo" /></button>
+            <button class="shot" data-src="assets/alostaz-logo-variations.jpg" aria-label="Open AlOstaz Motawer logo variations"><img src="assets/alostaz-logo-variations.jpg" alt="AlOstaz Motawer logo variations" /></button>
+            <button class="shot" data-src="assets/alostaz-colors-type.png" aria-label="Open AlOstaz Motawer color palette and typography"><img src="assets/alostaz-colors-type.png" alt="AlOstaz Motawer color palette and typography" /></button>
+            <button class="shot" data-src="assets/alostaz-applications.jpg" aria-label="Open AlOstaz Motawer brand applications"><img src="assets/alostaz-applications.jpg" alt="AlOstaz Motawer brand applications" /></button>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div class="project-no">03</div>
+            <div><h3>Print & Corporate Design</h3></div>
+            <div class="project-desc">
+              Corporate materials, logo updates, and branded print pieces for Sultan Averroes, including the ESG360 logo,
+              an Arabic corporate brochure, and branded institutional resilience material.
+              <div class="tags"><span class="tag">Logo Design</span><span class="tag">Corporate Brochure</span><span class="tag">Corporate Material</span></div>
+            </div>
+          </div>
+          <div class="gallery">
+            <button class="shot logo" data-src="assets/esg360-logo.jpg" aria-label="Open Sultan Averroes ESG360 logo"><img src="assets/esg360-logo.jpg" alt="Sultan Averroes ESG360 logo" /></button>
+            <button class="shot" data-src="assets/sultan-brochure.jpg" aria-label="Open Sultan Averroes corporate brochure"><img src="assets/sultan-brochure.jpg" alt="Sultan Averroes corporate brochure" /></button>
+            <button class="shot logo" data-src="assets/sav-logo.png" aria-label="Open SAV logo update"><img src="assets/sav-logo.png" alt="Sultan Averroes logo update" /></button>
+            <button class="shot logo" data-src="assets/sultan-sticker-2.png" aria-label="Open Sultan Averroes institutional resilience sticker"><img src="assets/sultan-sticker-2.png" alt="Sultan Averroes institutional resilience sticker" /></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container process-layout reveal">
+        <div>
+          <div class="eyebrow">09 / Workflow</div>
+          <h2 class="section-title">Tools & process</h2>
+          <p class="section-copy">A practical design process focused on clarity, consistency, and on-time delivery.</p>
+          <div class="tool-cloud">
+            <span class="tool">Adobe Photoshop</span><span class="tool">Adobe Illustrator</span><span class="tool">Canva</span>
+            <span class="tool">Figma</span><span class="tool">CapCut</span><span class="tool">Microsoft Office</span>
+          </div>
+          <p class="strengths"><strong>Core strengths:</strong> Creative thinking · Attention to detail · Time management · Teamwork · Working well under pressure</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-no">01</div><div><h3>Understand</h3><p>Brief, goals, audience, brand tone</p></div></div>
+          <div class="step"><div class="step-no">02</div><div><h3>Explore</h3><p>Research, references, visual direction</p></div></div>
+          <div class="step"><div class="step-no">03</div><div><h3>Design</h3><p>Create, refine, maintain consistency</p></div></div>
+          <div class="step"><div class="step-no">04</div><div><h3>Deliver</h3><p>Final files, formats, organized handoff</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid reveal">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>LET'S WORK<br />TOGETHER</h2>
+          <p class="contact-sub">Open to remote and international opportunities.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:ayaam.atef@icloud.com">Send an email</a>
+            <a class="btn btn-light" href="tel:+201026835263">Call me</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-line"><small>Email</small><a href="mailto:ayaam.atef@icloud.com">ayaam.atef@icloud.com</a></div>
+          <div class="contact-line"><small>Phone</small><a href="tel:+201026835263">+20 102 683 5263</a></div>
+          <div class="contact-line"><small>Location</small><strong>Mansoura, Egypt</strong></div>
+          <div class="contact-line"><small>Role</small><strong>Graphic Designer</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Aya Atef. All rights reserved.</span>
+      <span>Graphic Designer · Mansoura, Egypt</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project image preview">
+    <button class="lightbox-close" aria-label="Close preview">×</button>
+    <img src="" alt="Expanded project preview" />
+  </div>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.shot').forEach(shot => {
+      shot.addEventListener('click', () => {
+        lightboxImg.src = shot.dataset.src;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
